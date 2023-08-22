@@ -271,10 +271,10 @@ const handleExifAndModal = async () => {
         infoOpen = !infoOpen;
       });
 
-      let currentImage = i + 1; // keep track of which image is currently being shown
+      let currentImage = i; // keep track of which image is currently being shown
       // show the correct exif data when changing images
       const setExifData = () => {
-        modalImg.src = `./images/webp-large/${currentImage}.webp`;
+        modalImg.src = `./images/webp-large/${currentImage + 1}.webp`;
         modalCameraData.textContent = images[currentImage].getAttribute('data-camera');
         modalLensData.textContent = images[currentImage].getAttribute('data-lens');
         modalApertureData.textContent = images[currentImage].getAttribute('data-aperture');
@@ -286,7 +286,7 @@ const handleExifAndModal = async () => {
       // show the previous image when clicking on back button
       backButton.addEventListener('click', (event) => {
         event.stopPropagation();
-        if (currentImage > 1) {
+        if (currentImage > 0) {
           currentImage--;
           setExifData();
         } else {
@@ -302,7 +302,7 @@ const handleExifAndModal = async () => {
           currentImage++;
           setExifData();
         } else {
-          currentImage = 1;
+          currentImage = 0;
           setExifData();
         }
       });
@@ -310,7 +310,7 @@ const handleExifAndModal = async () => {
       // show the previous image when pressing left arrow key and the next image when pressing right arrow key
       document.addEventListener('keydown', (event) => {
         if (event.key === 'ArrowLeft') {
-          if (currentImage > 1) {
+          if (currentImage > 0) {
             currentImage--;
             setExifData();
           } else {
@@ -322,7 +322,7 @@ const handleExifAndModal = async () => {
             currentImage++;
             setExifData();
           } else {
-            currentImage = 1;
+            currentImage = 0;
             setExifData();
           }
         }
