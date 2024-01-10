@@ -1,4 +1,5 @@
 # Norja-kuvia
-Kuvia Norjan reissulta (2023)
 
-[Linkki](https://laurihe.github.io/Norja-kuvia/) sivulle
+Pictures from my trip to Norway.
+
+[Click to view page](https://laurihe.github.io/Norja-kuvia/)
