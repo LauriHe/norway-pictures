@@ -1,4 +1,4 @@
-# Norja-kuvia
+# Norway-pictures
 
 Pictures from my trip to Norway.
 
